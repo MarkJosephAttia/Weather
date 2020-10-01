@@ -1,0 +1,5 @@
+<odoo>
+    <record id="accepted_group" model="res.groups">
+        <field name="name">Accepted Group</field>
+    </record>
+</odoo>

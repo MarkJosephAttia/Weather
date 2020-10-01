@@ -26,8 +26,9 @@
 
     # always loaded
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
-        'views/weather_view.xml'
+        'views/weather_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
