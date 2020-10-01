@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="form_view_id">
+        <field name="name">city.form</field>
+        <field name="model">weather.weather</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="City Form">
+                <sheet>
+                    <group>
+                        <field name="city"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="tree_view_id">
+        <field name="name">city.tree</field>
+        <field name="model">weather.weather</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Idea list">
+                <field name="city"/>
+                <field name="weather"/>
+                <field name="temperature"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="show_tables">
+        <field name="name">Weather</field>
+        <field name="res_model">weather.weather</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+             <p class="o_view_nocontent_smiling_face">Please Add Your First City
+                </p>
+        </field>
+    </record>
+
+        <!-- top level menu: no parent -->
+    <menuitem id="main_weather_menu" name="Weather Project"/>
+    <menuitem id="table_menu" name="Show The Table" parent="main_weather_menu"
+              action="show_tables"/>
+
+</odoo>

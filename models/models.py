@@ -1,18 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
+import urllib
+import json
 
-
-# class weather(models.Model):
-#     _name = 'weather.weather'
-#     _description = 'weather.weather'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+class weather(models.Model):
+    _name = 'weather.weather'
+    _description = 'The Weather Model'
+    city = fields.Text(string='city', required=True)
+    weather = fields.Text(string='weather', required=False)
+    temperature = fields.Text(string='temperature', required=False)
